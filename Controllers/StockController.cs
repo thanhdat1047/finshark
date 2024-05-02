@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using api.Data;
+using api.Dtos.Comment;
 using api.Dtos.Stock;
 using api.Mappers;
 using Microsoft.AspNetCore.Mvc;
@@ -45,6 +46,39 @@ namespace api.Controllers
             _context.SaveChanges();
             return CreatedAtAction(nameof(GetStockById),new {id = stockModel.Id },stockModel.ToStockDto());
            
+        }
+        [HttpPut]
+        [Route("{id}")]
+        public IActionResult Update([FromRoute] int id, [FromBody] UpdateStockRequestDto stockDto)
+        {
+            var stockModel = _context.Stocks.FirstOrDefault(x => x.Id == id);
+            if(stockModel == null)
+            {
+                return NotFound();
+            }
+            stockModel.Symbol = stockDto.Symbol;
+            stockModel.CompanyName = stockDto.CompanyName;
+            stockModel.Purchase = stockDto.Purchase; 
+            stockModel.LastDiv = stockDto.LastDiv; 
+            stockModel.Industry = stockDto.Industry; 
+            stockModel.MarketCap = stockDto.MarketCap;
+
+            _context.SaveChanges();
+            return Ok(stockModel.ToStockDto());
+        }
+        [HttpDelete]
+        [Route("{id}")]
+        public IActionResult Delete([FromRoute]int id)
+        {
+            var stockModel = _context.Stocks.FirstOrDefault(s => s.Id == id);
+            if(stockModel == null)
+            {
+                return NotFound();
+            }
+            _context.Remove(stockModel);
+            _context.SaveChanges();
+            return NoContent();
+
         }
     }
 }
