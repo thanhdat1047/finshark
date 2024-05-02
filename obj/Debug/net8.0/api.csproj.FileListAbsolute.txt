@@ -135,3 +135,4 @@ D:\.Net\workspace\repos\api\obj\Debug\net8.0\refint\api.dll
 D:\.Net\workspace\repos\api\obj\Debug\net8.0\api.pdb
 D:\.Net\workspace\repos\api\obj\Debug\net8.0\api.genruntimeconfig.cache
 D:\.Net\workspace\repos\api\obj\Debug\net8.0\ref\api.dll
+D:\.Net\workspace\repos\api\obj\Debug\net8.0\api.sourcelink.json
