@@ -136,3 +136,7 @@ D:\.Net\workspace\repos\api\obj\Debug\net8.0\api.pdb
 D:\.Net\workspace\repos\api\obj\Debug\net8.0\api.genruntimeconfig.cache
 D:\.Net\workspace\repos\api\obj\Debug\net8.0\ref\api.dll
 D:\.Net\workspace\repos\api\obj\Debug\net8.0\api.sourcelink.json
+D:\.Net\workspace\repos\api\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\.Net\workspace\repos\api\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\.Net\workspace\repos\api\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\.Net\workspace\repos\api\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
