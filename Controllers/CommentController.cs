@@ -7,6 +7,7 @@ using api.Data;
 using api.Dtos.Comment;
 using api.Interfaces;
 using api.Mappers;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -45,6 +46,8 @@ namespace api.Controllers
             return Ok(commentDto);
         }
         [HttpPost("{stockId:int}")]
+        [Authorize]
+        
         public async Task<IActionResult> Create ([FromRoute]int stockId, [FromBody] CreateCommentDto commentDto)
         {
             if(!ModelState.IsValid)
@@ -61,6 +64,7 @@ namespace api.Controllers
         }
 
         [HttpPut]
+        [Authorize]
         [Route("{id:int}")]
         public async Task<IActionResult> Update([FromRoute] int id, [FromBody] UpdateCommentRequestDto commentDto)
         {
@@ -74,6 +78,7 @@ namespace api.Controllers
 
         [HttpDelete]
         [Route("{id:int}")]
+        [Authorize]
         public async Task<IActionResult> Delete([FromRoute] int id)
         {
             if(!ModelState.IsValid)
