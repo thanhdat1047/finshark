@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using api.Interfaces;
 using api.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 
 namespace api.Service
